@@ -12,13 +12,15 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import de.greenrobot.event.EventBus;
 
-public class ${NAME}Fragment extends Frfdsagment implements {NAME}Contract.View {
+#set($lowercasedFileName = $NAME.substring(0,1).toLowerCase() + $NAME.substring(1))
+
+public class ${NAME}Fragment extends Fragment implements {NAME}Contract.View {
     private Unbinder unbinder;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_${NAME}, container, false);
+        View view = inflater.inflate(R.layout.fragment_${lowercasedFileName}, container, false);
         unbinder = ButterKnife.bind(this, view);
         EventBus.getDefault().register(this);
         setUp();

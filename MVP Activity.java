@@ -6,13 +6,15 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.greenrobot.event.EventBus;
 
+#set($lowercasedFileName = $NAME.substring(0,1).toLowerCase() + $NAME.substring(1))
+
 public class ${NAME}Activity extends AppCompatActivity implements ${NAME}Contract.View {
     protected ${NAME}Contract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_${NAME});
+        setContentView(R.layout.activity_${lowercasedFileName});
         ButterKnife.bind(this);
 
         if(presenter == null)
