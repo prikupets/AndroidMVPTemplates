@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import de.greenrobot.event.EventBus;
+import org.greenrobot.eventbus.EventBus;
 
 #set($lowercasedFileName = $NAME.substring(0,1).toLowerCase() + $NAME.substring(1))
 
