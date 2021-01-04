@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import org.greenrobot.eventbus.EventBus;
 
 #set($lowercasedFileName = $NAME.substring(0,1).toLowerCase() + $NAME.substring(1))
 
@@ -26,7 +25,6 @@ public class ${NAME}Activity extends AppCompatActivity implements ${NAME}Contrac
     @Override
     protected void onStart() {
         super.onStart();
-        EventBus.getDefault().register(this);
         presenter.attach(this);
     }
 
@@ -34,7 +32,6 @@ public class ${NAME}Activity extends AppCompatActivity implements ${NAME}Contrac
     protected void onStop() {
         super.onStop();
         presenter.detach();
-        EventBus.getDefault().unregister(this);
     }
 
     private void setUp() {
