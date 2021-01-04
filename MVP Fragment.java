@@ -14,7 +14,7 @@ import org.greenrobot.eventbus.EventBus;
 
 #set($lowercasedFileName = $NAME.substring(0,1).toLowerCase() + $NAME.substring(1))
 
-public class ${NAME}Fragment extends Fragment implements {NAME}Contract.View {
+public class ${NAME}Fragment extends Fragment implements ${NAME}Contract.View {
     private Unbinder unbinder;
 
     @Nullable
